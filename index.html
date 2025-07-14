@@ -1,203 +1,78 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Base Auxiliar TJES</title>
+  <title>Sistemas Administrativos - SEI</title>
   <style>
     body {
-      background-color: white;
       font-family: Arial, sans-serif;
-      color: #000;
-      margin: 0;
-      padding: 20px;
-      border: 5px dashed #003366; /* Azul escuro */
-    }
-
-    h1 {
-      color: #003366;
-      text-align: center;
-    }
-
-    p {
-      color: #000;
-      font-size: 16px;
-      line-height: 1.5;
     }
 
     .container {
-      margin-top: 30px;
+      margin: 20px;
     }
 
-    .botao {
-      display: inline-block;
-      width: 6cm;
-      height: 2cm;
-      line-height: 2cm;
-      text-align: center;
-      background-color: #336699; /* Azul médio */
-      color: white;
-      border: 2px solid #003366; /* Azul escuro */
-      border-radius: 5px;
-      text-decoration: none;
-      margin: 10px;
+    .section-title {
+      font-size: 20px;
       font-weight: bold;
+      margin-bottom: 10px;
     }
 
-    .secao {
-      display: none;
-      margin-top: 20px;
-      padding: 15px;
-      border: 2px dashed #99ccff; /* Azul claro */
-      background-color: #f0f8ff;
-    }
-
-    .secao.ativa {
-      display: block;
-    }
-
-    .sub-botao {
-      display: inline-block;
-      margin: 10px 5px;
-      padding: 10px 20px;
-      background-color: #6699cc;
-      color: #fff;
-      border: 1px solid #003366;
-      border-radius: 4px;
-      text-decoration: none;
+    .button {
+      background-color: #004080;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
+      margin-bottom: 15px;
     }
 
-    .texto-info {
-      margin-top: 15px;
+    .content {
+      display: none;
+      background-color: #f4f4f4;
+      padding: 15px;
+      border-left: 4px solid #004080;
+    }
+
+    .content h3 {
+      margin-top: 0;
+    }
+
+    .content p {
+      margin: 8px 0;
     }
   </style>
 </head>
 <body>
-
-  <h1>BASE AUXILIAR TJES</h1>
-  <p>
-    Esta base é meramente de apoio à base disponível no Assyst e de caráter complementar, para tirar possíveis dúvidas em processos rotineiros.
-  </p>
-
   <div class="container">
-    <a href="#" class="botao" onclick="mostrarSecao('adm')">Sistemas Administrativos</a>
-    <a href="#" class="botao" onclick="mostrarSecao('jud')">Sistemas Judiciários</a>
-  </div>
+    <div class="section-title">Sistemas Administrativos</div>
+    <div>
+      <h2>SEI</h2>
+      <button class="button" onclick="toggleContent()">Solução de Erros de Acesso</button>
+      <div class="content" id="seiContent">
+        <h3>SEI: Solução de Erros de Acesso</h3>
+        <p>O Sistema Eletrônico de Informações (SEI) é um dos pilares da gestão documental. Erros de acesso são comuns e podem ser resolvidos com alguns passos claros. Esta seção detalha as soluções para os problemas de login mais frequentes.</p>
 
-  <!-- Seção Sistemas Administrativos -->
- <div id="adm" class="secao">
-  <h2>Sistemas Administrativos</h2>
-  <button class="sub-botao" onclick="mostrarInfo('malote')">Malote Digital</button>
-  <button class="sub-botao" onclick="mostrarInfo('selo')">Selo Digital</button>
-  <button class="sub-botao" onclick="mostrarInfo('egap')">e-Gap</button>
-  <button class="sub-botao" onclick="mostrarInfo('econsig')">e-Consig</button>
-  <button class="sub-botao" onclick="mostrarInfo('ediario')">e-Diário</button>
+        <h4>Erro de Acesso com CPF</h4>
+        <p>Se o usuário estiver enfrentando problemas de acesso ao SEI utilizando o CPF, recomende usar o LOGIN de rede. Em muitos casos, o login de rede é o identificador principal para acesso ao sistema.</p>
 
-  <div class="texto-info" id="malote" style="display: none;">
-    <h3>Malote Digital</h3>
-<p><h4>Acessos</h4></p>
-    <p>
-      Reset de senha do Malote: a senha pode ser redefinida na opção <strong>“Esqueci minha senha”</strong>, onde será necessário informar o login.  
-      <br>⚠️ Verifique se o login está cadastrado com letras maiúsculas ou minúsculas corretamente.
-      <br>📧 Observar também se o e-mail está cadastrado corretamente. Preferencialmente, o e-mail deve estar em letras minúsculas.
-    </p>
-<p><h4>Cadastros</h4></p>
-     <p>
-      Ao realizar a criação do usuário no Malote Digital, baser-se as informações pelo IDM, visto que o SIARHES(e-JUD) pode apresentar
-      inconsistencias quanto ao n° do CPF, omitindo digitos (zeros no inicio e no final).
-     </p>
-  </div>
-
-  <div class="texto-info" id="selo" style="display: none;">
-    <h3>Selo Digital</h3>
-    <p>
-      Utiliza a senha de rede. Para solicitar o reset da senha, deve ser anexado ao chamado:
-      <ul>
-        <li>Documento com foto do titular</li>
-        <li>Ato de nomeação</li>
-      </ul>
-    1️⃣A senha temporária será enviada para o e-mail @tjes do cartório.
-      Em geral, ela se inicia com <strong>RCTN...@tjes.jus.br</strong>.  
-      <br><br>
-    2️⃣Caso não possua acesso ao e-mail TJES do cartório, será necessário solicitar também o reset da senha do e-mail (que é diferente da senha de rede nesse caso).
-      Desmebre um chamado para solicitação do reset da senha do e-mail.
-   <p>3️⃣Confirme se requerente possui acesso ao Malote Digital da unidade do cartório. Se sim, informar que a senha do e-mail será enviada via malote.
-    Caso não possua acesso ao Malote, informa que será enviado Secretaria do Foro mais proxima.</p>
-      4️⃣O chamado desmembrado derá ser enviado para a 3N Corregedoria.
-    Após a confirmação de que o requereten retomou acesso ao e-mail, realize o reset da senha de rede (no nome do titular) e encaminhe para a senha temporária
-      para o e-mail.
-    </p>
-  </div>
-
-  <div class="texto-info" id="egap" style="display: none;">
-    <h3>e-Gap</h3>
-    <p>
-      <!-- Informações sobre e-Gap podem ser inseridas aqui -->
-      A unidade apresentada no e-Gap se baseia na Orgão Princial e Orgãos Adcionais incluidos no IDM.
-    </p>
-  </div>
-
-  <div class="texto-info" id="econsig" style="display: none;">
-    <h3>e-Consig</h3>
-    <p>
-      <!-- Informações sobre e-Consig podem ser inseridas aqui -->
-      Informações complementares sobre o sistema e-Consig.
-    </p>
-  </div>
-
-  <div class="texto-info" id="ediario" style="display: none;">
-    <h3>e-Diário</h3>
-    <p>
-      <!-- Informações sobre e-Diário podem ser inseridas aqui -->
-      A unidade apresentada no e-Diário se baseia na <strong>Orgão Princial</strong> e <strong>Orgãos Adcionais</strong> incluidos no IDM.
-    </p>
-  </div>
-</div>
-
-  <!-- Seção Sistemas Judiciários -->
-  <div id="jud" class="secao">
-    <h2>Sistemas Judiciários</h2>
-    <button class="sub-botao" onclick="mostrarInfo('pje')">PJe</button>
-
-    <div class="texto-info" id="pje" style="display: none;">
-      <h3>PJe</h3>
-      <p>
-        A senha pode ser alterada através da tela de login, opção <strong>“Solicitar nova senha”</strong>.  
-        <br>O e-mail cadastrado pode ser consultado no próprio sistema PJe.
-      </p>
+        <h4>Outros Erros de Login (Procedimento Padrão)</h4>
+        <ol>
+          <li><strong>Remover o Acesso SEI:</strong> Primeiramente, remova o acesso do usuário ao SEI através das ferramentas de administração de perfis.</li>
+          <li><strong>Desmarcar a Flag "Sist. Segurança":</strong> No perfil do usuário, desmarque a flag "Sist. Segurança".</li>
+          <li><strong>Conceder Novamente o Acesso SEI:</strong> Conceda o acesso ao SEI novamente, seguindo os procedimentos padrão de concessão de permissões.</li>
+          <li><strong>Remarcar a Flag "Sist. Segurança":</strong> Finalmente, remarque a flag "Sist. Segurança". Este processo de "reset" geralmente resolve problemas de permissão e acesso corrompidos.</li>
+        </ol>
+      </div>
     </div>
-
-  <button class="sub-botao" onclick="mostrarInfo('projudi')">Projudi</button>
-
-    <div class="texto-info" id="pje" style="display: none;">
-      <h3>Projudi</h3>
-      <p>
-        A senha pode ser alterada através da tela de login, opção <strong>“Esqueci Senha”</strong>.  
-        
-      </p>
-    </div>
-
-
   </div>
 
   <script>
-    function mostrarSecao(id) {
-      document.querySelectorAll('.secao').forEach(secao => {
-        secao.classList.remove('ativa');
-      });
-      document.getElementById(id).classList.add('ativa');
-
-      // Oculta os textos internos também
-      document.querySelectorAll('.texto-info').forEach(el => el.style.display = 'none');
-    }
-
-    function mostrarInfo(id) {
-      // Oculta todos
-      document.querySelectorAll('.texto-info').forEach(el => el.style.display = 'none');
-      // Mostra o desejado
-      document.getElementById(id).style.display = 'block';
+    function toggleContent() {
+      const content = document.getElementById("seiContent");
+      content.style.display = content.style.display === "none" || content.style.display === "" ? "block" : "none";
     }
   </script>
-
 </body>
 </html>
