@@ -92,6 +92,7 @@
   <button class="sub-botao" onclick="mostrarInfo('egap')">e-Gap</button>
   <button class="sub-botao" onclick="mostrarInfo('econsig')">e-Consig</button>
   <button class="sub-botao" onclick="mostrarInfo('ediario')">e-Diário</button>
+  <button class="sub-botao" onclick="mostrarInfo('sei')">SEI</button>
 
   <div class="texto-info" id="malote" style="display: none;">
     <h3>Malote Digital</h3>
@@ -143,6 +144,22 @@
       <!-- Informações sobre e-Consig podem ser inseridas aqui -->
       Informações complementares sobre o sistema e-Consig.
     </p>
+
+    <div class="texto-info" id="sei" style="display: none;">
+  <h3>SEI</h3>
+  <p>O Sistema Eletrônico de Informações (SEI) é um dos pilares da gestão documental. Erros de acesso são comuns e podem ser resolvidos com alguns passos claros. Esta seção detalha as soluções para os problemas de login mais frequentes.</p>
+
+  <h4>Erro de Acesso com CPF</h4>
+  <p>Se o usuário estiver enfrentando problemas de acesso ao SEI utilizando o CPF, recomende usar o LOGIN de rede. Em muitos casos, o login de rede é o identificador principal para acesso ao sistema.</p>
+
+  <h4>Outros Erros de Login (Procedimento Padrão)</h4>
+  <ol>
+    <li><strong>Remover o Acesso SEI:</strong> Primeiramente, remova o acesso do usuário ao SEI através das ferramentas de administração de perfis.</li>
+    <li><strong>Desmarcar a Flag "Sist. Segurança":</strong> No perfil do usuário, desmarque a flag "Sist. Segurança".</li>
+    <li><strong>Conceder Novamente o Acesso SEI:</strong> Conceda o acesso ao SEI novamente, seguindo os procedimentos padrão de concessão de permissões.</li>
+    <li><strong>Remarcar a Flag "Sist. Segurança":</strong> Finalmente, remarque a flag "Sist. Segurança". Este processo de "reset" geralmente resolve problemas de permissão e acesso corrompidos.</li>
+  </ol>
+</div>
   </div>
 
   <div class="texto-info" id="ediario" style="display: none;">
@@ -153,6 +170,7 @@
     </p>
   </div>
 </div>
+  
 
   <!-- Seção Sistemas Judiciários -->
   <div id="jud" class="secao">
