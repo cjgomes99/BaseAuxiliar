@@ -3,29 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Treinamento TJES</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Página Inicial - Sistemas Administrativos e Judiciais</title>
+    <style>
+        /* Resetando margens e paddings padrão */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo da página */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f7ff; /* Fundo claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            color: #003366; /* Azul escuro */
+        }
+
+        /* Container principal */
+        .container {
+            background-color: #ffffff; /* Cor de fundo da caixa */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        /* Estilo do título */
+        h1 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #005a8d; /* Azul mais claro */
+        }
+
+        /* Estilo dos botões principais */
+        .main-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Botões principais */
+        .main-btn {
+            background-color: #006699; /* Azul escuro */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        /* Efeito de hover nos botões */
+        .main-btn:hover {
+            background-color: #005a8d; /* Azul mais claro */
+            transform: scale(1.05);
+        }
+
+        /* Efeito de focus nos botões */
+        .main-btn:focus {
+            outline: none;
+            background-color: #003d56; /* Azul ainda mais escuro */
+        }
+    </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Treinamento Administrativo e Judiciário</h1>
+        <h1>Escolha um Sistema</h1>
         <div class="main-buttons">
-            <button class="main-btn" onclick="showSubButtons('admin')">Sistemas Administrativos</button>
-            <button class="main-btn" onclick="showSubButtons('judicial')">Sistemas Judiciais</button>
-        </div>
-
-        <div id="sub-buttons" class="sub-buttons">
-            <button class="sub-btn" onclick="showContent('admin1')">Sub Botão 1 Admin</button>
-            <button class="sub-btn" onclick="showContent('admin2')">Sub Botão 2 Admin</button>
-            <button class="sub-btn" onclick="showContent('jud1')">Sub Botão 1 Judicial</button>
-            <button class="sub-btn" onclick="showContent('jud2')">Sub Botão 2 Judicial</button>
-        </div>
-
-        <div id="content" class="content">
-            <!-- Conteúdo dos tópicos será carregado aqui -->
+            <button class="main-btn" onclick="showAlert('Sistemas Administrativos')">Sistemas Administrativos</button>
+            <button class="main-btn" onclick="showAlert('Sistemas Judiciais')">Sistemas Judiciais</button>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Função chamada ao clicar nos botões principais
+        function showAlert(system) {
+            alert(`Você escolheu: ${system}`);
+        }
+    </script>
+
 </body>
 </html>
