@@ -1,95 +1,31 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sistemas TJES</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #003366, #336699, #6699cc, #ffffff);
-      margin: 0;
-      padding: 2rem;
-      color: #000;
-    }
-
-    h1 {
-      text-align: center;
-      color: #003300;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .botao {
-      width: 6cm;
-      height: 2cm;
-      font-size: 1.1rem;
-      font-weight: bold;
-      background-color: #005580;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .botao:hover {
-      background-color: #3399cc;
-    }
-
-    .conteudo {
-      margin-top: 2rem;
-      display: none;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      background-color: #f2f9ff;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinamento TJES</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Sistemas do TJES</h1>
-  <div class="container">
-    <button class="botao" onclick="mostrarConteudo('adm')">Sistemas Administrativos</button>
-    <button class="botao" onclick="mostrarConteudo('jud')">Sistemas Judiciais</button>
-  </div>
+    <div class="container">
+        <h1>Treinamento Administrativo e Judiciário</h1>
+        <div class="main-buttons">
+            <button class="main-btn" onclick="showSubButtons('admin')">Sistemas Administrativos</button>
+            <button class="main-btn" onclick="showSubButtons('judicial')">Sistemas Judiciais</button>
+        </div>
 
-  <div id="adm" class="conteudo">
-    <h2>Sistemas Administrativos</h2>
-    <ul>
-      <li><strong>SGP (Sistema de Gestão de Pessoas):</strong> informações funcionais, afastamentos, férias.</li>
-      <li><strong>SEI (Sistema Eletrônico de Informações):</strong> tramitação de processos administrativos.</li>
-      <li><strong>SGA (Sistema de Gestão Administrativa):</strong> patrimônio, almoxarifado, contratos.</li>
-      <li><strong>SIP (Sistema Integrado de Pagamentos):</strong> controle de pagamentos administrativos.</li>
-      <li><strong>e-CORREIÇÃO:</strong> inspeções e correições nas unidades.</li>
-    </ul>
-  </div>
+        <div id="sub-buttons" class="sub-buttons">
+            <button class="sub-btn" onclick="showContent('admin1')">Sub Botão 1 Admin</button>
+            <button class="sub-btn" onclick="showContent('admin2')">Sub Botão 2 Admin</button>
+            <button class="sub-btn" onclick="showContent('jud1')">Sub Botão 1 Judicial</button>
+            <button class="sub-btn" onclick="showContent('jud2')">Sub Botão 2 Judicial</button>
+        </div>
 
-  <div id="jud" class="conteudo">
-    <h2>Sistemas Judiciais</h2>
-    <ul>
-      <li><strong>e-Jud / PJe:</strong> tramitação processual digital.</li>
-      <li><strong>Projudi:</strong> sistema de processos judiciais (versões antigas).</li>
-      <li><strong>SGE (Sistema de Gestão Eletrônica):</strong> cadastro de partes, audiências, movimentações.</li>
-      <li><strong>BNMP / INFOSEG:</strong> integração com base nacional de mandados e segurança pública.</li>
-      <li><strong>Malote Digital:</strong> envio e recebimento eletrônico de documentos.</li>
-    </ul>
-  </div>
+        <div id="content" class="content">
+            <!-- Conteúdo dos tópicos será carregado aqui -->
+        </div>
+    </div>
 
-  <script>
-    function mostrarConteudo(id) {
-      document.querySelectorAll('.conteudo').forEach(div => div.style.display = 'none');
-      document.getElementById(id).style.display = 'block';
-    }
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
