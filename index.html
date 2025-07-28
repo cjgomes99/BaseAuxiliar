@@ -71,20 +71,63 @@
             outline: none;
             background-color: #003d56; /* Azul ainda mais escuro */
         }
+
+        /* Estilo para os botões secundários */
+        .sub-buttons {
+            display: none; /* Inicialmente oculto */
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .sub-btn {
+            background-color: #0099cc; /* Azul intermediário */
+            color: white;
+            padding: 12px 25px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .sub-btn:hover {
+            background-color: #007f9e; /* Azul mais escuro */
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Auxiliar TJES</h1>
+        <h1>Escolha um Sistema</h1>
         <div class="main-buttons">
-            <button class="main-btn" onclick="showAlert('Sistemas Administrativos')">Sistemas Administrativos</button>
+            <button class="main-btn" onclick="toggleSubButtons('admin')">Sistemas Administrativos</button>
             <button class="main-btn" onclick="showAlert('Sistemas Judiciais')">Sistemas Judiciais</button>
+        </div>
+
+        <!-- Sub-botões de Sistemas Administrativos -->
+        <div id="admin-buttons" class="sub-buttons">
+            <button class="sub-btn" onclick="showAlert('E-Gap')">E-Gap</button>
+            <button class="sub-btn" onclick="showAlert('Malote Digital')">Malote Digital</button>
+            <button class="sub-btn" onclick="showAlert('SEI')">SEI</button>
+            <button class="sub-btn" onclick="showAlert('Selo Digital')">Selo Digital</button>
+            <button class="sub-btn" onclick="showAlert('Siarhes')">Siarhes</button>
+            <button class="sub-btn" onclick="showAlert('VPN')">VPN</button>
+            <button class="sub-btn" onclick="showAlert('E-mail')">E-mail</button>
         </div>
     </div>
 
     <script>
-        // Função chamada ao clicar nos botões principais
+        // Função para mostrar ou esconder os botões secundários
+        function toggleSubButtons(system) {
+            const adminButtons = document.getElementById('admin-buttons');
+            if (system === 'admin') {
+                adminButtons.style.display = (adminButtons.style.display === 'none' || adminButtons.style.display === '') ? 'flex' : 'none';
+            }
+        }
+
+        // Função chamada ao clicar nos botões
         function showAlert(system) {
             alert(`Você escolheu: ${system}`);
         }
